@@ -94,7 +94,7 @@ if (isset($_POST['create'])) {
     <form method="post">
 
         <p>
-            <input type="submit" name = "view" value="View Employees"></p>
+            <input type="submit" name = "view" value="View Emergency Contacts"></p>
 
         <p>
 

@@ -27,7 +27,7 @@ if (isset($_POST['create'])) {
       "TransportationID"     => $_POST['TransportationID'],
       "VehicleType" => $_POST['VehicleType'],
       "Destination"     => $_POST['Destination'],
-      "Date"     => $_POST['Date'],
+      "TDate"     => $_POST['TDate'],
     );
 
     // create an SQL statement to insert users input
@@ -64,10 +64,10 @@ if (isset($_POST['create'])) {
         echo "<table><tr><th class='border-class'>TransportationID</th>
         <th class='border-class'>VehicleType</th>
         <th class='borderclass'>Destination</th>
-        <th class='borderclass'>Date</th></tr>";
+        <th class='borderclass'>TDate</th></tr>";
 // output data of each row
         foreach($result as $row) {
-            echo "<tr><td class='borderclass'>".$row["TransportationID"]."</td><td class='borderclass'>".$row["VehicleType"]."</td><td class='borderclass'>".$row["Destination"]."</td><td class='borderclass'>".$row["Date"]."</td></tr>";}
+            echo "<tr><td class='borderclass'>".$row["TransportationID"]."</td><td class='borderclass'>".$row["VehicleType"]."</td><td class='borderclass'>".$row["Destination"]."</td><td class='borderclass'>".$row["TDate"]."</td></tr>";}
         echo "</table>";
     } else {
         echo "0 results";
@@ -104,8 +104,8 @@ if (isset($_POST['create'])) {
     	<label for="Destination">Destination</label>
     	<input type="text" name="Destination" id="Destination">
 
-    	<label for="Date">Date</label>
-    	<input type="text" name="Date" id="Date">
+    	<label for="TDate">Date</label>
+    	<input type="text" name="TDate" id="TDate">
 
     	<input type="submit" name="create" value="Create Transportation Record">
         
@@ -120,8 +120,8 @@ if (isset($_POST['create'])) {
     	<label for="DestinationUp">Destination to Update</label>
     	<input type="textUp" name="DestinationUp" id="DestinationUp">
 
-    	<label for="DateUp">Date to Update</label>
-    	<input type="textUp" name="DateUp" id="DateUp">
+    	<label for="TDateUp">TDate to Update</label>
+    	<input type="textUp" name="TDateUp" id="TDateUp">
 
 
             <input type="submit" name = "update" value="Update Transportation Record">

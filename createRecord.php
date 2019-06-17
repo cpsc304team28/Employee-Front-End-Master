@@ -114,11 +114,11 @@ if (isset($_POST['create'])) {
         if ($result && $statement->rowCount() > 0) {
             echo "<table><tr><th class='border-class'>CaseNo</th>
         <th class='border-class'>EmployeeID</th>
-        <th class='borderclass'>Date</th>
+        <th class='borderclass'>MDate</th>
         <th class='borderclass'>Completed</th></tr>";
 // output data of each row
             foreach ($result as $row) {
-                echo "<tr><td class='borderclass'>" . $row["CaseNo"] . "</td><td class='borderclass'>" . $row["EmployeeID"] . "</td><td class='borderclass'>" . $row["Date"] . "</td><td class='borderclass'>" . $row["Completed"] . "</td></tr>";
+                echo "<tr><td class='borderclass'>" . $row["CaseNo"] . "</td><td class='borderclass'>" . $row["EmployeeID"] . "</td><td class='borderclass'>" . $row["MDate"] . "</td><td class='borderclass'>" . $row["Completed"] . "</td></tr>";
             }
             echo "</table>";
         } else {
@@ -153,8 +153,8 @@ if (isset($_POST['create'])) {
     	<label for="EmployeeID">EmployeeID</label>
     	<input type="text" name="EmployeeID" id="EmployeeID">
 
-    	<label for="Date">Date</label>
-    	<input type="text" name="Date" id="Date">
+    	<label for="MDate">MDate</label>
+    	<input type="text" name="MDate" id="MDate">
 
     	<label for="Completed">Completed</label>
     	<input type="text" name="Completed" id="Completed">
@@ -170,8 +170,8 @@ if (isset($_POST['create'])) {
     	<label for="EmployeeIDUp">EmployeeID to Update</label>
     	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
 
-    	<label for="DateUp">Date to Update</label>
-    	<input type="text" name="DateUp" id="DateUp">
+    	<label for="MDateUp">MDate to Update</label>
+    	<input type="text" name="MDateUp" id="MDateUp">
 
     	<label for="CompletedUp">Completed to Update</label>
     	<input type="text" name="CompletedUp" id="CompletedUp">
