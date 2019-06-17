@@ -111,7 +111,10 @@ if (isset($_POST['create'])) {
   <h2 style="color:white;">Transportation Record</h2>
 
     <form method="post">
+        <p>
+            <input type="submit" name = "view" value="View Transportation Records"></p>
 
+        <p>
     	<label for="TransportationID">TransportationID</label>
     	<input type="text" name="TransportationID" id="TransportationID">
 
@@ -126,29 +129,27 @@ if (isset($_POST['create'])) {
 
     	<input type="submit" name="create" value="Create Transportation Record">
         
+        </p>
         <p>
-            <input type="submit" name = "view" value="View Transportation Records"></p>
-        
-         <p>
-           <label for="TransportationID">TransportationID to Update</label>
-    	<input type="text" name="TransportationID" id="TransportationID">
+           <label for="TransportationIDUp">TransportationID to Update</label>
+    	<input type="text" name="TransportationIDUp" id="TransportationIDUp">
 
-    	<label for="VehicleType">VehicleType to Update</label>
-    	<input type="text" name="VehicleType" id="VehicleType">
+    	<label for="VehicleTypeUp">VehicleType to Update</label>
+    	<input type="text" name="VehicleTypeUp" id="VehicleTypeUp">
 
-    	<label for="Destination">Destination to Update</label>
-    	<input type="text" name="Destination" id="Destination">
+    	<label for="DestinationUp">Destination to Update</label>
+    	<input type="textUp" name="DestinationUp" id="DestinationUp">
 
-    	<label for="Date">Date to Update</label>
-    	<input type="text" name="Date" id="Date">
+    	<label for="DateUp">Date to Update</label>
+    	<input type="textUp" name="DateUp" id="DateUp">
 
 
             <input type="submit" name = "update" value="Update Transportation Record">
         </p>
         
         <p>
-            <label for="TransportationID">TransportationID to Delete</label>
-    	<input type="text" name="TransportationID" id="TransportationID">
+            <label for="TransportationIDDel">TransportationID to Delete</label>
+    	<input type="text" name="TransportationIDDel" id="TransportationIDDel">
             <input type="submit" name = "delete" value="Delete Transportation Record">
         </p>
         

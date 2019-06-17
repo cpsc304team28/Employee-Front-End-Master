@@ -109,6 +109,11 @@ if (isset($_POST['create'])) {
 
     <form method="post">
 
+        <p>
+            <input type="submit" name = "view" value="View Provides Records"></p>
+
+        <p>
+
     	<label for="EmployeeID">EmployeeID</label>
     	<input type="text" name="EmployeeID" id="EmployeeID">
 
@@ -116,25 +121,23 @@ if (isset($_POST['create'])) {
     	<input type="text" name="TransportationID" id="TransportationID">
 
     	<input type="submit" name="create" value="Create Provides Record">
-        
+        </p>
+
+
         <p>
-            <input type="submit" name = "view" value="View Provides Records"></p>
-        
-         <p>
+    	<label for="EmployeeIDUp">EmployeeID to Update</label>
+    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
 
-    	<label for="EmployeeID">EmployeeID to Update</label>
-    	<input type="text" name="VehicleType" id="EmployeeID">
-
-    	<label for="TransportationID">TransportationID to Update</label>
-    	<input type="text" name="TransportationID" id="TransportationID">
+    	<label for="TransportationIDUp">TransportationID to Update</label>
+    	<input type="text" name="TransportationIDUp" id="TransportationIDUp">
 
 
             <input type="submit" name = "update" value="Update Provides Record">
         </p>
         
         <p>
-            <label for="EmployeeID">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+            <label for="EmployeeIDDel">EmployeeID to Delete</label>
+    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
             <input type="submit" name = "delete" value="Delete Provides Record">
         </p>
         

@@ -26,7 +26,7 @@
 
 if (isset($_POST['create'])) {
 
-  // config.php holds the server information 
+  // config.php holds the server information
   // change config file to local host (the one you made in Hazra's tutorial)
   // common.php maintains special characters used in html that would otherwise
   // not be recognized as HTML, by calling method  escape(<html>)
@@ -63,7 +63,7 @@ if (isset($_POST['create'])) {
 
   } catch(PDOException $error) {
       echo $sql . "<br>" . $error->getMessage();
-  }    
+  }
 } else if (isset($_POST['view'])){
     try {
     require "config.php";
@@ -77,7 +77,7 @@ if (isset($_POST['create'])) {
     $statement = $connection->prepare($sql);
     $statement->bindParam(':Destination', $Destination, PDO::PARAM_STR);
     $statement->execute();
-        
+
     $result = $statement->fetchAll();
     if ($result && $statement->rowCount() > 0) {
         echo "<table><tr>
@@ -98,7 +98,7 @@ if (isset($_POST['create'])) {
 ?>
 
 
-<!-- include website title/headers/etc, a "successfully added" message, 
+<!-- include website title/headers/etc, a "successfully added" message,
  and the input form itself.-->
 <?php include "templates/header.php"; ?>
 
@@ -109,7 +109,10 @@ if (isset($_POST['create'])) {
   <h2 style="color:white;">Shuttle Schedule</h2>
 
     <form method="post">
+        <p>
+            <input type="submit" name = "view" value="View Shuttle Schedule Records"></p>
 
+        <p>
     	<label for="Destination">Destination</label>
     	<input type="text" name="Destination" id="Destination">
 
@@ -120,34 +123,31 @@ if (isset($_POST['create'])) {
         <input type="text" name="ArrivalTime" id="ArrivalTime">
 
     	<input type="submit" name="create" value="Create Shuttle Schedule Record">
-        
+        </p>
         <p>
-            <input type="submit" name = "view" value="View Shuttle Schedule Records"></p>
-        
-         <p>
 
-    	<label for="Destination">VehicleType to Update</label>
-    	<input type="text" name="Destination" id="Destination">
+    	<label for="DestinationUp">VehicleType to Update</label>
+    	<input type="text" name="DestinationUp" id="DestinationUp">
 
-    	<label for="DepartureTime">DepartureTime to Update</label>
-    	<input type="text" name="DepartureTime" id="DepartureTime">
+    	<label for="DepartureTimeUp">DepartureTime to Update</label>
+    	<input type="text" name="DepartureTimeUp" id="DepartureTimeUp">
 
-             <label for="ArrivalTime">ArrivalTime to Update</label>
-             <input type="text" name="ArrivalTime" id="ArrivalTime">
+             <label for="ArrivalTimeUp">ArrivalTime to Update</label>
+             <input type="text" name="ArrivalTimeUp" id="ArrivalTimeUp">
 
 
             <input type="submit" name = "update" value="Update Shuttle Schedule Record">
         </p>
-        
+
         <p>
-            <label for="Destination">Shuttle Schedule to Delete</label>
-    	<input type="text" name="Destination" id="Destination">
+            <label for="DestinationDel">Shuttle Schedule to Delete</label>
+    	<input type="text" name="DestinationDel" id="DestinationDel">
             <input type="submit" name = "delete" value="Delete Shuttle Schedule Record">
         </p>
-        
+
 
     </form>
 
     <a href="indexTransport.php">Back to Transportation Management</a>
-    
+
     <?php include "templates/footer.php"; ?>

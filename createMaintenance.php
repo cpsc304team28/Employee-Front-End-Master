@@ -73,7 +73,7 @@ if (isset($_POST['create'])) {
     FROM HouseKeepingAndMaintenance";
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':EmployeeID', EmployeeID, PDO::PARAM_STR);
+    $statement->bindParam(':EmployeeID', $EmployeeID, PDO::PARAM_STR);
     $statement->execute();
         
     $result = $statement->fetchAll();
@@ -107,6 +107,10 @@ if (isset($_POST['create'])) {
 
     <form method="post">
 
+        <p>
+            <input type="submit" name = "view" value="View Housekeeping Assignment"></p>
+
+        <p>
     	<label for="EmployeeID">EmployeeID</label>
     	<input type="text" name="EmployeeID" id="EmployeeID">
 
@@ -115,22 +119,20 @@ if (isset($_POST['create'])) {
 
     	<input type="submit" name="create" value="Create HouseKeeping Assignment">
         
+        </p>
         <p>
-            <input type="submit" name = "view" value="View Housekeeping Assignment"></p>
-        
-         <p>
-           <label for="EmployeeID">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+           <label for="EmployeeIDUp">EmployeeID to Update</label>
+    	<input type="text" name="EmployeeIDUp" id="EmployeeID">
 
-    	<label for="AssignedFloor">Assigned Floor to Update</label>
-    	<input type="text" name="AssignedFloor" id="AssignedFloor">
+    	<label for="AssignedFloorUp">Assigned Floor to Update</label>
+    	<input type="text" name="AssignedFloorUp" id="AssignedFloorUp">
 
             <input type="submit" name = "update" value="Update Housekeeping Assignment">
         </p>
         
         <p>
-            <label for="EmployeeID">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+            <label for="EmployeeIDDel">EmployeeID to Delete</label>
+    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
             <input type="submit" name = "delete" value="Delete Housekeeping Assignment">
         </p>
         

@@ -23,11 +23,11 @@ if (isset($_POST['create'])) {
         // create variables from users form inputs. In PHP, values are placed
         // into $_POST array
         $new_user = array(
-            "EmployeeID" => $_POST['EmployeeID'],
-            "FacilityName" => $_POST['FacilityName'],
-            "Name"=>$_POST['Name'],
-            "Position"=>$_POST['Position']
-//        "EmployeeID" => $_POST['EmployeeID'],
+            "ReservationNo" => $_POST['ReservationNo'],
+            "RoomNo" => $_POST['RoomNo'],
+            "CustomerID"=>$_POST['CustomerID'],
+            "CheckInDate"=>$_POST['CheckInDate'],
+        "CheckOutDate" => $_POST['CheckOutDate'],
 //        "FacilityName" => $_POST['FacilityName'],
 //        "Name" => $_POST['Name'],
 //        "Position" => $_POST['Position']
@@ -36,7 +36,7 @@ if (isset($_POST['create'])) {
         // create an SQL statement to insert users input
         $sql = sprintf(
             "INSERT INTO %s (%s) values (%s)",
-            "Employee_WorksAt",
+            "Reservation_Makes",
             implode(", ", array_keys($new_user)),
             ":" . implode(", :", array_keys($new_user))
         );
@@ -57,21 +57,26 @@ if (isset($_POST['create'])) {
         $connection = new PDO($dsn, $username, $password, $options);
 
         $sql = "SELECT *
-    FROM Employee_WorksAt";
+    FROM Reservation_Makes";
 
         $statement = $connection->prepare($sql);
-        $statement->bindParam(':EmployeeID', $EmployeeID, PDO::PARAM_STR);
+        $statement->bindParam(':ReservationNo', $ReservationNo, PDO::PARAM_STR);
         $statement->execute();
 
         $result = $statement->fetchAll();
         if ($result && $statement->rowCount() > 0) {
-            echo "<table><tr><th class='border-class'>employeeid</th>
-        <th class='border-class'>facilityname</th>
-        <th class='borderclass'>name</th>
-        <th class='borderclass'>position</th></tr>";
+            echo "<table><tr><th class='border-class'>ReservationNo</th>
+        <th class='border-class'>RoomNo</th>
+        <th class='borderclass'>CustomerID</th>
+        <th class='borderclass'>CheckInDate</th>
+        <th class='borderclass'>CheckOutDate</th></tr>";
 // output data of each row
             foreach($result as $row) {
-                echo "<tr><td class='borderclass'>".$row["EmployeeID"]."</td><td class='borderclass'>".$row["FacilityName"]."</td><td class='borderclass'>".$row["Name"]."</td><td class='borderclass'>".$row["Position"]."</td></tr>";}
+                echo "<tr><td class='borderclass'>".$row["ReservationNo"]."</td>
+<td class='borderclass'>".$row["RoomNo"]."</td>
+<td class='borderclass'>".$row["CustomerID"]."</td>
+<td class='borderclass'>".$row["CheckInDate"]."</td>
+<td class='borderclass'>".$row["CheckOutDate"]."</td></tr>";}
             echo "</table>";
         } else {
             echo "0 results";
@@ -101,8 +106,8 @@ if (isset($_POST['create'])) {
 
         <p>
 
-        <label for="EmployeeID">EmployeeID</label>
-        <input type="text" name="EmployeeID" id="EmployeeID">
+        <label for="ReservationNo">Reservation Number</label>
+        <input type="text" name="ReservationNo" id="ReservationNo">
 
         <label for="FacilityName">Facility Name</label>
         <input type="text" name="FacilityName" id="FacilityName">

@@ -73,7 +73,7 @@ if (isset($_POST['create'])) {
     FROM Salaries";
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':Position', Position, PDO::PARAM_STR);
+    $statement->bindParam(':Position', $Position, PDO::PARAM_STR);
     $statement->execute();
         
     $result = $statement->fetchAll();
@@ -107,6 +107,10 @@ if (isset($_POST['create'])) {
 
     <form method="post">
 
+        <p>
+            <input type="submit" name = "view" value="View Salaries"></p>
+
+        <p>
     	<label for="Position">Position</label>
     	<input type="text" name="Position" id="Position">
 
@@ -115,21 +119,19 @@ if (isset($_POST['create'])) {
 
     	<input type="submit" name="create" value="Create Salary">
         
+        </p>
         <p>
-            <input type="submit" name = "view" value="View Salaries"></p>
-        
-         <p>
-            <label for="Position">Position to Update</label>
-    	<input type="text" name="Position" id="Position">
-             <label for="Salaries">Salary to Update</label>
-    	<input type="text" name="Salaries" id="Salaries">
+            <label for="PositionUp">Position to Update</label>
+    	<input type="text" name="PositionUp" id="PositionUp">
+             <label for="SalariesUp">Salary to Update</label>
+    	<input type="text" name="SalariesUp" id="SalariesUp">
 
             <input type="submit" name = "update" value="Update Salary">
         </p>
         
         <p>
-            <label for="Position">Position to Delete</label>
-    	<input type="text" name="Position" id="Position">
+            <label for="PositionDel">Position to Delete</label>
+    	<input type="text" name="PositionDel" id="PositionDel">
             <input type="submit" name = "delete" value="Delete Salary">
         </p>
         

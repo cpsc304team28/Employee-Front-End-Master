@@ -111,7 +111,10 @@ if (isset($_POST['create'])) {
   <h2 style="color:white;">Maintenance Record</h2>
 
     <form method="post">
+        <p>
+            <input type="submit" name = "view" value="View Maintence Record"></p>
 
+        <p>
     	<label for="CaseNo">CaseNo</label>
     	<input type="text" name="CaseNo" id="CaseNo">
 
@@ -126,29 +129,28 @@ if (isset($_POST['create'])) {
 
     	<input type="submit" name="create" value="Create Maintenance Record">
         
+        </p>
+
         <p>
-            <input type="submit" name = "view" value="View Maintence Record"></p>
-        
-         <p>
-           <label for="CaseNo">CaseNo to Update</label>
-    	<input type="text" name="CaseNo" id="CaseNo">
+           <label for="CaseNoUp">CaseNo to Update</label>
+    	<input type="text" name="CaseNoUp" id="CaseNoUp">
 
-    	<label for="EmployeeID">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+    	<label for="EmployeeIDUp">EmployeeID to Update</label>
+    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
 
-    	<label for="Date">Date to Update</label>
-    	<input type="text" name="Date" id="Date">
+    	<label for="DateUp">Date to Update</label>
+    	<input type="text" name="DateUp" id="DateUp">
 
-    	<label for="Completed">Completed to Update</label>
-    	<input type="text" name="Completed" id="Completed">
+    	<label for="CompletedUp">Completed to Update</label>
+    	<input type="text" name="CompletedUp" id="CompletedUp">
 
 
             <input type="submit" name = "update" value="Update Maintenance Record">
         </p>
         
         <p>
-            <label for="CaseNo">CaseNo to Delete</label>
-    	<input type="text" name="CaseNo" id="CaseNo">
+            <label for="CaseNoDel">CaseNo to Delete</label>
+    	<input type="text" name="CaseNoDel" id="CaseNoDel">
             <input type="submit" name = "delete" value="Delete Maintenance Record">
         </p>
         

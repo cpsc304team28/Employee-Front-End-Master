@@ -73,7 +73,7 @@ if (isset($_POST['create'])) {
     FROM Lifeguard_Guards";
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':EmployeeID', EmployeeID, PDO::PARAM_STR);
+    $statement->bindParam(':EmployeeID', $EmployeeID, PDO::PARAM_STR);
     $statement->execute();
         
     $result = $statement->fetchAll();
@@ -82,7 +82,8 @@ if (isset($_POST['create'])) {
         <th class='border-class'>StationNo</th>";
 // output data of each row
         foreach($result as $row) {
-            echo "<tr><td class='borderclass'>".$row["EmployeeID"]."</td><td class='borderclass'>".$row["StationNo"]."</td></tr>";}
+            echo "<tr><td class='borderclass'>".$row["EmployeeID"]."</td>
+<td class='borderclass'>".$row["StationNo"]."</td></tr>";}
         echo "</table>";
     } else {
         echo "0 results";
@@ -106,31 +107,33 @@ if (isset($_POST['create'])) {
   <h2 style="color:white;">Lifeguards</h2>
 
     <form method="post">
+        <p>
+            <input type="submit" name = "view" value="View Lifeguard Assignment"></p>
 
+        <p>
     	<label for="EmployeeID">EmployeeID</label>
     	<input type="text" name="EmployeeID" id="EmployeeID">
 
     	<label for="StationNo">StationNo</label>
     	<input type="text" name="StationNo" id="StationNo">
 
-    	<input type="submit" name="create" value="Create Lifeguard Assignment">
+            <input type="submit" name="create" value="Create Lifeguard Assignment"></p>
         
-        <p>
-            <input type="submit" name = "view" value="View Lifeguard Assignment"></p>
-        
-         <p>
-           <label for="EmployeeID">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+<!--        <p>-->
 
-    	<label for="StationNo">StationNo to Update</label>
-    	<input type="text" name="StationNo" id="StationNo">
+        <p>
+           <label for="EmployeeIDUp">EmployeeID to Update</label>
+    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
+
+    	<label for="StationNoUp">StationNo to Update</label>
+    	<input type="text" name="StationNoUp" id="StationNoUp">
 
             <input type="submit" name = "update" value="Update Lifeguard Assignment">
         </p>
         
         <p>
-            <label for="EmployeeID">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+            <label for="EmployeeIDDel">EmployeeID to Delete</label>
+    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
             <input type="submit" name = "delete" value="Delete Lifeguard Assignment">
         </p>
         
