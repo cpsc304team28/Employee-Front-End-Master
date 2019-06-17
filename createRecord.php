@@ -24,7 +24,7 @@
 //
 //printTable();
 
-if (isset($_POST['Create Maintenance Record'])) {
+if (isset($_POST['create'])) {
 
   // config.php holds the server information 
   // change config file to local host (the one you made in Hazra's tutorial)

@@ -30,6 +30,7 @@ if (isset($_POST['create'])) {
   // change config file to local host (the one you made in Hazra's tutorial)
   // common.php maintains special characters used in html that would otherwise
   // not be recognized as HTML, by calling method  escape(<html>)
+  // not be recognized as HTML, by calling method  escape(<html>)
 
   require "config.php";
   require "common.php";
@@ -43,14 +44,14 @@ if (isset($_POST['create'])) {
     // create variables from users form inputs. In PHP, values are placed
     // into $_POST array
     $new_user = array(
-      "EmployeeID"     => $_POST['EmployeeID'],
-      "YearsOfExperience" => $_POST['YearsOfExperience'],
+      "VehicleType" => $_POST['VehicleType'],
+      "Capacity"     => $_POST['Capacity'],
     );
 
     // create an SQL statement to insert users input
     $sql = sprintf(
       "INSERT INTO %s (%s) values (%s)",
-      "Instructor_Instructs",
+      "Vehicle",
       implode(", ", array_keys($new_user)),
       ":" . implode(", :", array_keys($new_user))
     );
@@ -70,19 +71,20 @@ if (isset($_POST['create'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT *
-    FROM Instructor_Instructs";
+    FROM Vehicle";
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':EmployeeID', EmployeeID, PDO::PARAM_STR);
+    $statement->bindParam(':VehicleType', $VehicleType, PDO::PARAM_STR);
     $statement->execute();
         
     $result = $statement->fetchAll();
     if ($result && $statement->rowCount() > 0) {
-        echo "<table><tr><th class='border-class'>EmployeeID</th>
-        <th class='border-class'>YearsOfExperience</th>";
+        echo "<table><tr>
+        <th class='border-class'>VehicleType</th>
+        <th class='borderclass'>Capacity</th></tr>";
 // output data of each row
         foreach($result as $row) {
-            echo "<tr><td class='borderclass'>".$row["EmployeeID"]."</td><td class='borderclass'>".$row["YearsOfExperience"]."</td></tr>";}
+            echo "<tr><td class='borderclass'>".$row["VehicleType"]."</td><td class='borderclass'>".$row["Capacity"]."</td></tr>";}
         echo "</table>";
     } else {
         echo "0 results";
@@ -99,45 +101,46 @@ if (isset($_POST['create'])) {
  and the input form itself.-->
 <?php include "templates/header.php"; ?>
 
-  <?php if (isset($_POST['Create Instructor']) && $statement) { ?>
-    > <?php echo $_POST['EmployeeID']; ?> successfully added.
+  <?php if (isset($_POST['Create VehicleType Record']) && $statement) { ?>
+    > <?php echo $_POST['VehicleType']; ?> successfully added.
   <?php } ?>
 
-  <h2 style="color:white;">Instructors</h2>
+  <h2 style="color:white;">VehicleType Record</h2>
 
     <form method="post">
 
-    	<label for="EmployeeID">EmployeeID</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+    	<label for="VehicleType">VehicleType</label>
+    	<input type="text" name="VehicleType" id="VehicleType">
 
-    	<label for="YearsOfExperience">Years Of Experience</label>
-    	<input type="text" name="YearsOfExperience" id="YearsOfExperience">
+    	<label for="Capacity">Destination</label>
+    	<input type="text" name="Capacity" id="Capacity">
 
-    	<input type="submit" name="create" value="Create Instructor">
+    	<input type="submit" name="create" value="Create Vehicle Record">
         
         <p>
-            <input type="submit" name = "view" value="ViewInstructos"></p>
+            <input type="submit" name = "view" value="View Vehicle Records"></p>
         
          <p>
-           <label for="EmployeeID">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
 
-    	<label for="StationNo">StationNo to Update</label>
-    	<input type="text" name="StationNo" id="StationNo">
+    	<label for="VehicleType">VehicleType to Update</label>
+    	<input type="text" name="VehicleType" id="VehicleType">
 
-            <input type="submit" name = "update" value="Update Lifeguard Assignment">
+    	<label for="Capacity">Destination to Update</label>
+    	<input type="text" name="Capacity" id="Capacity">
+
+
+            <input type="submit" name = "update" value="Update Vehicle Record">
         </p>
         
         <p>
-            <label for="EmployeeID">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
-            <input type="submit" name = "delete" value="Delete Instructor">
+            <label for="VehicleType">VehicleType to Delete</label>
+    	<input type="text" name="VehicleType" id="VehicleType">
+            <input type="submit" name = "delete" value="Delete VehicleType Record">
         </p>
         
 
     </form>
 
-<a href="createLifeGuard.php">Back to Lifeguard</a>
-    <a href="indexEmployee.php">Back to Employee Management</a>
+    <a href="indexTransport.php">Back to Transportation Management</a>
     
     <?php include "templates/footer.php"; ?>

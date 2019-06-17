@@ -30,6 +30,7 @@ if (isset($_POST['create'])) {
   // change config file to local host (the one you made in Hazra's tutorial)
   // common.php maintains special characters used in html that would otherwise
   // not be recognized as HTML, by calling method  escape(<html>)
+  // not be recognized as HTML, by calling method  escape(<html>)
 
   require "config.php";
   require "common.php";
@@ -43,14 +44,15 @@ if (isset($_POST['create'])) {
     // create variables from users form inputs. In PHP, values are placed
     // into $_POST array
     $new_user = array(
-      "EmployeeID"     => $_POST['EmployeeID'],
-      "YearsOfExperience" => $_POST['YearsOfExperience'],
+      "Destination" => $_POST['Destination'],
+      "DepartureTime"     => $_POST['DepartureTime'],
+        "ArrivalTime" => $_POST['ArrivalTime'],
     );
 
     // create an SQL statement to insert users input
     $sql = sprintf(
       "INSERT INTO %s (%s) values (%s)",
-      "Instructor_Instructs",
+      "ShuttleSchedule",
       implode(", ", array_keys($new_user)),
       ":" . implode(", :", array_keys($new_user))
     );
@@ -70,19 +72,20 @@ if (isset($_POST['create'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT *
-    FROM Instructor_Instructs";
+    FROM ShuttleSchedule";
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':EmployeeID', EmployeeID, PDO::PARAM_STR);
+    $statement->bindParam(':Destination', $Destination, PDO::PARAM_STR);
     $statement->execute();
         
     $result = $statement->fetchAll();
     if ($result && $statement->rowCount() > 0) {
-        echo "<table><tr><th class='border-class'>EmployeeID</th>
-        <th class='border-class'>YearsOfExperience</th>";
+        echo "<table><tr>
+        <th class='border-class'>VehicleType</th>
+        <th class='borderclass'>Capacity</th></tr>";
 // output data of each row
         foreach($result as $row) {
-            echo "<tr><td class='borderclass'>".$row["EmployeeID"]."</td><td class='borderclass'>".$row["YearsOfExperience"]."</td></tr>";}
+            echo "<tr><td class='borderclass'>".$row["Destination"]."</td><td class='borderclass'>".$row["DepartureTime"]."</td><td class='borderclass'>".$row["ArrivalTime"]."</td></tr>";}
         echo "</table>";
     } else {
         echo "0 results";
@@ -99,45 +102,52 @@ if (isset($_POST['create'])) {
  and the input form itself.-->
 <?php include "templates/header.php"; ?>
 
-  <?php if (isset($_POST['Create Instructor']) && $statement) { ?>
-    > <?php echo $_POST['EmployeeID']; ?> successfully added.
+  <?php if (isset($_POST['Create Shuttle Schedule']) && $statement) { ?>
+    > <?php echo $_POST['Destination']; ?> successfully added.
   <?php } ?>
 
-  <h2 style="color:white;">Instructors</h2>
+  <h2 style="color:white;">Shuttle Schedule</h2>
 
     <form method="post">
 
-    	<label for="EmployeeID">EmployeeID</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+    	<label for="Destination">Destination</label>
+    	<input type="text" name="Destination" id="Destination">
 
-    	<label for="YearsOfExperience">Years Of Experience</label>
-    	<input type="text" name="YearsOfExperience" id="YearsOfExperience">
+    	<label for="DepartureTime">DepartureTime</label>
+    	<input type="text" name="DepartureTime" id="DepartureTime">
 
-    	<input type="submit" name="create" value="Create Instructor">
+        <label for="ArrivalTime">ArrivalTime</label>
+        <input type="text" name="ArrivalTime" id="ArrivalTime">
+
+    	<input type="submit" name="create" value="Create Shuttle Schedule Record">
         
         <p>
-            <input type="submit" name = "view" value="ViewInstructos"></p>
+            <input type="submit" name = "view" value="View Shuttle Schedule Records"></p>
         
          <p>
-           <label for="EmployeeID">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
 
-    	<label for="StationNo">StationNo to Update</label>
-    	<input type="text" name="StationNo" id="StationNo">
+    	<label for="Destination">VehicleType to Update</label>
+    	<input type="text" name="Destination" id="Destination">
 
-            <input type="submit" name = "update" value="Update Lifeguard Assignment">
+    	<label for="DepartureTime">DepartureTime to Update</label>
+    	<input type="text" name="DepartureTime" id="DepartureTime">
+
+             <label for="ArrivalTime">ArrivalTime to Update</label>
+             <input type="text" name="ArrivalTime" id="ArrivalTime">
+
+
+            <input type="submit" name = "update" value="Update Shuttle Schedule Record">
         </p>
         
         <p>
-            <label for="EmployeeID">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
-            <input type="submit" name = "delete" value="Delete Instructor">
+            <label for="Destination">Shuttle Schedule to Delete</label>
+    	<input type="text" name="Destination" id="Destination">
+            <input type="submit" name = "delete" value="Delete Shuttle Schedule Record">
         </p>
         
 
     </form>
 
-<a href="createLifeGuard.php">Back to Lifeguard</a>
-    <a href="indexEmployee.php">Back to Employee Management</a>
+    <a href="indexTransport.php">Back to Transportation Management</a>
     
     <?php include "templates/footer.php"; ?>

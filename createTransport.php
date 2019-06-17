@@ -24,7 +24,7 @@
 //
 //printTable();
 
-if (isset($_POST['Create Maintenance Record'])) {
+if (isset($_POST['create'])) {
 
   // config.php holds the server information 
   // change config file to local host (the one you made in Hazra's tutorial)
@@ -44,16 +44,16 @@ if (isset($_POST['Create Maintenance Record'])) {
     // create variables from users form inputs. In PHP, values are placed
     // into $_POST array
     $new_user = array(
-      "CaseNo"     => $_POST['CaseNo'],
-      "EmployeeID" => $_POST['EmployeeID'],
+      "TransportationID"     => $_POST['TransportationID'],
+      "VehicleType" => $_POST['VehicleType'],
+      "Destination"     => $_POST['Destination'],
       "Date"     => $_POST['Date'],
-      "Completed"     => $_POST['Completed'],
     );
 
     // create an SQL statement to insert users input
     $sql = sprintf(
       "INSERT INTO %s (%s) values (%s)",
-      "MaintenanceRecord_Keeps_Tracks",
+      "Transportation",
       implode(", ", array_keys($new_user)),
       ":" . implode(", :", array_keys($new_user))
     );
@@ -73,21 +73,21 @@ if (isset($_POST['Create Maintenance Record'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT *
-    FROM MaintenanceRecord_Keeps_Tracks";
+    FROM Transportation";
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':CaseNo', $CaseNo, PDO::PARAM_STR);
+    $statement->bindParam(':TransportationID', $TransportationID, PDO::PARAM_STR);
     $statement->execute();
         
     $result = $statement->fetchAll();
     if ($result && $statement->rowCount() > 0) {
-        echo "<table><tr><th class='border-class'>CaseNo</th>
-        <th class='border-class'>EmployeeID</th>
-        <th class='borderclass'>Date</th>
-        <th class='borderclass'>Completed</th></tr>";
+        echo "<table><tr><th class='border-class'>TransportationID</th>
+        <th class='border-class'>VehicleType</th>
+        <th class='borderclass'>Destination</th>
+        <th class='borderclass'>Date</th></tr>";
 // output data of each row
         foreach($result as $row) {
-            echo "<tr><td class='borderclass'>".$row["CaseNo"]."</td><td class='borderclass'>".$row["EmployeeID"]."</td><td class='borderclass'>".$row["Date"]."</td><td class='borderclass'>".$row["Completed"]."</td></tr>";}
+            echo "<tr><td class='borderclass'>".$row["TransportationID"]."</td><td class='borderclass'>".$row["VehicleType"]."</td><td class='borderclass'>".$row["Destination"]."</td><td class='borderclass'>".$row["Date"]."</td></tr>";}
         echo "</table>";
     } else {
         echo "0 results";
@@ -104,59 +104,57 @@ if (isset($_POST['Create Maintenance Record'])) {
  and the input form itself.-->
 <?php include "templates/header.php"; ?>
 
-  <?php if (isset($_POST['Create Maintenance Record']) && $statement) { ?>
-    > <?php echo $_POST['CaseNo']; ?> successfully added.
+  <?php if (isset($_POST['Create Transportation Record']) && $statement) { ?>
+    > <?php echo $_POST['TransportationID']; ?> successfully added.
   <?php } ?>
 
-  <h2 style="color:white;">Maintenance Record</h2>
+  <h2 style="color:white;">Transportation Record</h2>
 
     <form method="post">
 
-    	<label for="CaseNo">CaseNo</label>
-    	<input type="text" name="CaseNo" id="CaseNo">
+    	<label for="TransportationID">TransportationID</label>
+    	<input type="text" name="TransportationID" id="TransportationID">
 
-    	<label for="EmployeeID">EmployeeID</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+    	<label for="VehicleType">VehicleType</label>
+    	<input type="text" name="VehicleType" id="VehicleType">
+
+    	<label for="Destination">Destination</label>
+    	<input type="text" name="Destination" id="Destination">
 
     	<label for="Date">Date</label>
     	<input type="text" name="Date" id="Date">
 
-    	<label for="Completed">Completed</label>
-    	<input type="text" name="Completed" id="Completed">
-
-    	<input type="submit" name="create" value="Create Maintenance Record">
+    	<input type="submit" name="create" value="Create Transportation Record">
         
         <p>
-            <input type="submit" name = "view" value="View Maintence Record"></p>
+            <input type="submit" name = "view" value="View Transportation Records"></p>
         
          <p>
-           <label for="CaseNo">CaseNo to Update</label>
-    	<input type="text" name="CaseNo" id="CaseNo">
+           <label for="TransportationID">TransportationID to Update</label>
+    	<input type="text" name="TransportationID" id="TransportationID">
 
-    	<label for="EmployeeID">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeID" id="EmployeeID">
+    	<label for="VehicleType">VehicleType to Update</label>
+    	<input type="text" name="VehicleType" id="VehicleType">
+
+    	<label for="Destination">Destination to Update</label>
+    	<input type="text" name="Destination" id="Destination">
 
     	<label for="Date">Date to Update</label>
     	<input type="text" name="Date" id="Date">
 
-    	<label for="Completed">Completed to Update</label>
-    	<input type="text" name="Completed" id="Completed">
 
-
-            <input type="submit" name = "update" value="Update Maintenance Record">
+            <input type="submit" name = "update" value="Update Transportation Record">
         </p>
         
         <p>
-            <label for="CaseNo">CaseNo to Delete</label>
-    	<input type="text" name="CaseNo" id="CaseNo">
-            <input type="submit" name = "delete" value="Delete Maintenance Record">
+            <label for="TransportationID">TransportationID to Delete</label>
+    	<input type="text" name="TransportationID" id="TransportationID">
+            <input type="submit" name = "delete" value="Delete Transportation Record">
         </p>
         
 
     </form>
 
-<a href="createMaintenance.php">Back to HouseKeeping Assignment</a>
-
-    <a href="indexEmployee.php">Back to Employee Management</a>
+    <a href="indexTransport.php">Back to Transportation Management</a>
     
     <?php include "templates/footer.php"; ?>
