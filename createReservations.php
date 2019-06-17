@@ -93,58 +93,65 @@ if (isset($_POST['create'])) {
      and the input form itself.-->
 <?php include "templates/header.php"; ?>
 
-<?php if (isset($_POST['Create Employee']) && $statement) { ?>
-    > <?php echo $_POST['EmployeeID']; ?> successfully added.
+<?php if (isset($_POST['Create Reservation']) && $statement) { ?>
+    > <?php echo $_POST['ReservationNo']; ?> successfully added.
 <?php } ?>
 
-    <h2 style="color:white;">Employees</h2>
+    <h2 style="color:white;">Reservation</h2>
 
     <form method="post">
 
         <p>
-            <input type="submit" name = "view" value="View Employees"></p>
+            <input type="submit" name = "view" value="View Reservations"></p>
 
         <p>
 
         <label for="ReservationNo">Reservation Number</label>
         <input type="text" name="ReservationNo" id="ReservationNo">
 
-        <label for="FacilityName">Facility Name</label>
-        <input type="text" name="FacilityName" id="FacilityName">
+        <label for="RoomNo">RoomNo</label>
+        <input type="text" name="RoomNo" id="RoomNo">
 
-        <label for="Name">Name</label>
-        <input type="text" name="Name" id="Name">
+        <label for="CustomerID">CustomerID</label>
+        <input type="text" name="CustomerID" id="CustomerID">
 
-        <label for="Position">Position</label>
-        <input type="text" name="Position" id="Position">
+        <label for="CheckInDate">Check-In Date</label>
+        <input type="text" name="CheckInDate" id="CheckInDate">
 
-            <input type="submit" name="create" value="Create Employee"></p>
+            <label for="CheckOutDate">Check-Out Date</label>
+            <input type="text" name="CheckOutDate" id="CheckOutDate">
+
+            <input type="submit" name="create" value="Create Reservation"></p>
 
         <p>
 
-            <label for="EmployeeIDUp">EmployeeID to Update</label>
-            <input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
-            <label for="FacilityNameUp">Facility Name to Update</label>
-            <input type="text" name="FacilityNameUp" id="FacilityNameUp">
+            <label for="ReservationNoUp">ReservationNo to Update</label>
+            <input type="text" name="ReservationNoUp" id="ReservationNoUp">
 
-            <label for="NameUp">Name to Update</label>
-            <input type="text" name="NameUp" id="NameUp">
+            <label for="RoomNoUp">RoomNo to Update</label>
+            <input type="text" name="RoomNoUp" id="RoomNoUp">
 
-            <label for="PositionUp">Position to Update</label>
-            <input type="text" name="PositionUp" id="PositionUp">
+            <label for="CustomerIDUp">CustomerIDUp to Update</label>
+            <input type="text" name="CustomerIDUp" id="CustomerIDUp">
 
-            <input type="submit" name = "update" value="Update Employee">
+            <label for="CheckInDateUp">CheckInDate to Update</label>
+            <input type="text" name="CheckInDateUp" id="CheckInDateUp">
+
+            <label for="CheckOutDateUp">CheckOutDate to Update</label>
+            <input type="text" name="CheckOutDateUp" id="CheckOutDateUp">
+
+            <input type="submit" name = "update" value="Update Reservation">
         </p>
 
         <p>
-            <label for="EmployeeIDDel">EmployeeID to Delete</label>
-            <input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
-            <input type="submit" name = "delete" value="Delete Employee">
+            <label for="ReservationNoDel">Reservation to Delete</label>
+            <input type="text" name="ReservationNoDel" id="ReservationNoDel">
+            <input type="submit" name = "delete" value="Delete Reservation">
         </p>
 
 
     </form>
 
-    <a href="indexEmployee.php">Back to Employee Management</a>
+    <a href="indexCustomer.php">Back to Customer Management</a>
 
 <?php include "templates/footer.php"; ?>

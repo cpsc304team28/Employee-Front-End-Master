@@ -53,7 +53,7 @@ if (isset($_POST['create'])) {
     // create an SQL statement to insert users input
     $sql = sprintf(
       "INSERT INTO %s (%s) values (%s)",
-      "MaintenanceRecord_Keeps_Tracks",
+      "Maintenance_Record",
       implode(", ", array_keys($new_user)),
       ":" . implode(", :", array_keys($new_user))
     );
@@ -73,7 +73,7 @@ if (isset($_POST['create'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT *
-    FROM MaintenanceRecord_Keeps_Tracks";
+    FROM Maintenance_Record";
 
     $statement = $connection->prepare($sql);
     $statement->bindParam(':CaseNo', $CaseNo, PDO::PARAM_STR);
@@ -96,6 +96,38 @@ if (isset($_POST['create'])) {
   } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
   }
+} else if (isset($_POST['view'])) {
+    try {
+        require "config.php";
+        require "common.php";
+
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $sql = "SELECT *
+    FROM Maintenance_Record";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':CaseNo', $CaseNo, PDO::PARAM_STR);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
+        if ($result && $statement->rowCount() > 0) {
+            echo "<table><tr><th class='border-class'>CaseNo</th>
+        <th class='border-class'>EmployeeID</th>
+        <th class='borderclass'>Date</th>
+        <th class='borderclass'>Completed</th></tr>";
+// output data of each row
+            foreach ($result as $row) {
+                echo "<tr><td class='borderclass'>" . $row["CaseNo"] . "</td><td class='borderclass'>" . $row["EmployeeID"] . "</td><td class='borderclass'>" . $row["Date"] . "</td><td class='borderclass'>" . $row["Completed"] . "</td></tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+
+    } catch (PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 

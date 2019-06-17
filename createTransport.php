@@ -4,26 +4,6 @@
 // When SUBMIT button pressed, open new PDO (PHP data object) connection, 
 // then send INSERT SQL statement with the users inputted values
 
-//function printTable(){
-//    require "config.php";
-//    require "common.php";
-//
-//    $connection = new PDO($dsn, $username, $password, $options);
-//
-//    $sql = "SELECT *
-//    FROM Employee_WorksAt";
-//
-//    $EmployeeID = $_POST['EmployeeID'];
-//
-//    $statement = $connection->prepare($sql);
-//    $statement->bindParam(':EmployeeID', $CustomerID, PDO::PARAM_STR);
-//    $statement->execute();
-//
-//    $result = $statement->fetchAll(); 
-//}
-//
-//printTable();
-
 if (isset($_POST['create'])) {
 
   // config.php holds the server information 

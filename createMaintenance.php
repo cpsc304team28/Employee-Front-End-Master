@@ -50,7 +50,7 @@ if (isset($_POST['create'])) {
     // create an SQL statement to insert users input
     $sql = sprintf(
       "INSERT INTO %s (%s) values (%s)",
-      "HouseKeepingAndMaintenance",
+      "HousekeepingAndMaintenance",
       implode(", ", array_keys($new_user)),
       ":" . implode(", :", array_keys($new_user))
     );
@@ -70,7 +70,7 @@ if (isset($_POST['create'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT *
-    FROM HouseKeepingAndMaintenance";
+    FROM HousekeepingAndMaintenance";
 
     $statement = $connection->prepare($sql);
     $statement->bindParam(':EmployeeID', $EmployeeID, PDO::PARAM_STR);

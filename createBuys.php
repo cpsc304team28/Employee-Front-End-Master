@@ -24,13 +24,14 @@ if (isset($_POST['create'])) {
     // into $_POST array
     $new_user = array(
       "CustomerID"     => $_POST['CustomerID'],
-      "EquipmentID" => $_POST['EquipmentID'],
+      "TransportationID" => $_POST['TransportationID'],
+        "TicketID" => $_POST['TicketID']
     );
 
     // create an SQL statement to insert users input
     $sql = sprintf(
       "INSERT INTO %s (%s) values (%s)",
-      "Rents",
+      "Buys",
       implode(", ", array_keys($new_user)),
       ":" . implode(", :", array_keys($new_user))
     );
@@ -50,7 +51,7 @@ if (isset($_POST['create'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT *
-    FROM Rents";
+    FROM Buys";
 
     $statement = $connection->prepare($sql);
     $statement->bindParam(':CustomerID', $CustomerID, PDO::PARAM_STR);
@@ -59,10 +60,12 @@ if (isset($_POST['create'])) {
     $result = $statement->fetchAll();
     if ($result && $statement->rowCount() > 0) {
         echo "<table><tr><th class='border-class'>CustomerID</th>
-        <th class='border-class'>EquipmentID</th>";
+        <th class='border-class'>TransportationID</th>
+        <th class='border-class'>TicketID</th>";
 // output data of each row
         foreach($result as $row) {
-            echo "<tr><td class='borderclass'>".$row["CustomerID"]."</td><td class='borderclass'>".$row["EquipmentID"]."</td></tr>";}
+            echo "<tr><td class='borderclass'>".$row["CustomerID"]."</td><td class='borderclass'>".$row["TransportationID"]."</td>
+<td class='borderclass'>".$row["TicketID"]."</td></tr>";}
         echo "</table>";
     } else {
         echo "0 results";
@@ -79,39 +82,45 @@ if (isset($_POST['create'])) {
  and the input form itself.-->
 <?php include "templates/header.php"; ?>
 
-  <?php if (isset($_POST['Create Equipment Rental']) && $statement) { ?>
-    > <?php echo $_POST['EquipmentID']; ?> successfully added.
+  <?php if (isset($_POST['Create Ticket Purchase']) && $statement) { ?>
+    > <?php echo $_POST['TicketID']; ?> successfully added.
   <?php } ?>
 
-  <h2 style="color:white;">Equipment Rentals</h2>
+  <h2 style="color:white;">Ticket Purchases</h2>
 
     <form method="post">
 
         <p>
-            <input type="submit" name = "view" value="View Equipment Rentals"></p>
+            <input type="submit" name = "view" value="View Ticket Purchases"></p>
 
         <p>
     	<label for="CustomerID">CustomerID</label>
     	<input type="text" name="CustomerID" id="CustomerID">
 
-    	<label for="EquipmentID">EquipmentID</label>
-    	<input type="text" name="EquipmentID" id="EquipmentID">
+    	<label for="TransportationID">TransportationID</label>
+            <input type="text" name="TransportationID" id="TransportationID">
 
-    	<input type="submit" name="create" value="Create Equipment Rental">
+            <label for="TicketID">TicketID</label>
+            <input type="text" name="TicketID" id="TicketID">
+
+    	<input type="submit" name="create" value="Create Ticket Purchase">
         
         </p>
         <p>
             <label for="CustomerIDUp">CustomerID to Update</label>
             <input type="text" name="CustomerIDUp" id="CustomerIDUp">
 
-            <label for="EquipmentIDUp">EquipmentID to Update</label>
-            <input type="text" name="EquipmentIDUp" id="EquipmentIDUp">
+            <label for="TransportationIDUp">TransportationID to Update</label>
+            <input type="text" name="TransportationIDUp" id="TransportationIDUp">
 
-            <input type="submit" name = "update" value="Update Equipment Rental">
+            <label for="TicketIDUp">TicketID to Update</label>
+            <input type="text" name="TicketIDUp" id="TicketIDUp">
+
+            <input type="submit" name = "update" value="Update Ticket Purchase">
         </p>
         
         <p>
-            <label for="CustomerIDDel">CustomerID to Delete</label>
+            <label for="CustomerIDDel">CustomerID Purchase to Delete</label>
     	<input type="text" name="CustomerIDDel" id="CustomerIDDel">
             <input type="submit" name = "delete" value="Delete Equipment Rental">
         </p>
@@ -119,7 +128,7 @@ if (isset($_POST['create'])) {
 
     </form>
 
-<a href="createBuys.php">Manage Ticket Purchase</a>
+<a href="createCusPurchases.php">Back to Equipment Rentals</a>
     <a href="indexCustomer.php">Back to Customer Management</a>
     
     <?php include "templates/footer.php"; ?>
