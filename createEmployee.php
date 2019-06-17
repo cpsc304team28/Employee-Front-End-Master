@@ -65,10 +65,10 @@ if (isset($_POST['create'])) {
 
         $result = $statement->fetchAll();
         if ($result && $statement->rowCount() > 0) {
-            echo "<table><tr><th class='border-class'>employeeid</th>
-        <th class='border-class'>facilityname</th>
-        <th class='borderclass'>name</th>
-        <th class='borderclass'>position</th></tr>";
+            echo "<table><tr><th class='border-class'>EmployeeID</th>
+        <th class='border-class'>FacilityName</th>
+        <th class='borderclass'>Name</th>
+        <th class='borderclass'>Position</th></tr>";
 // output data of each row
             foreach($result as $row) {
                 echo "<tr><td class='borderclass'>".$row["EmployeeID"]."</td><td class='borderclass'>".$row["FacilityName"]."</td><td class='borderclass'>".$row["Name"]."</td><td class='borderclass'>".$row["Position"]."</td></tr>";}
