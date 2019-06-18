@@ -4,26 +4,6 @@
 // When SUBMIT button pressed, open new PDO (PHP data object) connection, 
 // then send INSERT SQL statement with the users inputted values
 
-//function printTable(){
-//    require "config.php";
-//    require "common.php";
-//
-//    $connection = new PDO($dsn, $username, $password, $options);
-//
-//    $sql = "SELECT *
-//    FROM Employee_WorksAt";
-//
-//    $EmployeeID = $_POST['EmployeeID'];
-//
-//    $statement = $connection->prepare($sql);
-//    $statement->bindParam(':EmployeeID', $CustomerID, PDO::PARAM_STR);
-//    $statement->execute();
-//
-//    $result = $statement->fetchAll(); 
-//}
-//
-//printTable();
-
 if (isset($_POST['create'])) {
 
   // config.php holds the server information 
@@ -44,7 +24,7 @@ if (isset($_POST['create'])) {
     // into $_POST array
     $new_user = array(
       "Position"     => $_POST['Position'],
-      "Salaries" => $_POST['Salaries'],
+      "Wage" => $_POST['Wage'],
     );
 
     // create an SQL statement to insert users input
@@ -79,10 +59,10 @@ if (isset($_POST['create'])) {
     $result = $statement->fetchAll();
     if ($result && $statement->rowCount() > 0) {
         echo "<table><tr><th class='border-class'>Position</th>
-        <th class='border-class'>Salaries</th>";
+        <th class='border-class'>Wage</th>";
 // output data of each row
         foreach($result as $row) {
-            echo "<tr><td class='borderclass'>".$row["Position"]."</td><td class='borderclass'>".$row["Salaries"]."</td></tr>";}
+            echo "<tr><td class='borderclass'>".$row["Position"]."</td><td class='borderclass'>".$row["Wage"]."</td></tr>";}
         echo "</table>";
     } else {
         echo "0 results";
@@ -114,19 +94,19 @@ if (isset($_POST['create'])) {
     	<label for="Position">Position</label>
     	<input type="text" name="Position" id="Position">
 
-    	<label for="Salaries">Salaries</label>
-    	<input type="text" name="Salaries" id="Salaries">
+    	<label for="Wage">Salaries</label>
+    	<input type="text" name="Wage" id="Wage">
 
-    	<input type="submit" name="create" value="Create Salary">
+    	<input type="submit" name="create" value="Create Wage">
         
         </p>
         <p>
             <label for="PositionUp">Position to Update</label>
     	<input type="text" name="PositionUp" id="PositionUp">
-             <label for="SalariesUp">Salary to Update</label>
-    	<input type="text" name="SalariesUp" id="SalariesUp">
+             <label for="WageUp">Salary to Update</label>
+    	<input type="text" name="SalariesUp" id="WageUp">
 
-            <input type="submit" name = "update" value="Update Salary">
+            <input type="submit" name = "update" value="Update Wage">
         </p>
         
         <p>
