@@ -159,6 +159,38 @@ if (isset($_POST['create'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
+} else if(isset($_POST['nested'])) {
+    try {
+        require "config.php";
+        require "common.php";
+
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $sql = "SELECT CustomerID
+    FROM Customer WHERE CustomerID IN 
+    (SELECT c.CustomerID FROM Customer c, Reservation_Makes r, Room ro 
+    WHERE r.CustomerID = c.CustomerID AND r.RoomNo = ro.RoomNo
+    GROUP BY CustomerID
+    HAVING SUM(ro.Price) > 200)";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':ReservationNo', $ReservationNo, PDO::PARAM_STR);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
+        if ($result && $statement->rowCount() > 0) {
+            echo "<table><tr><th class='border-class'>CustomerID</th></tr>";
+// output data of each row
+            foreach($result as $row) {
+                echo "<tr><td class='borderclass'>".$row["CustomerID"]."</td></tr>";}
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 
@@ -224,6 +256,7 @@ if (isset($_POST['create'])) {
         </p>
 
         <p><input type="submit" name = "join" value="Join Room Price and ReservationNo"></p>
+        <p><input type="submit" name = "nested" value="Customers spending more than 200"></p>
 
     </form>
 
