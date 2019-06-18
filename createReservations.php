@@ -125,6 +125,40 @@ if (isset($_POST['create'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
+} else if (isset($_POST['join'])) {
+    try {
+
+        require "config.php";
+        require "common.php";
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $ReservationNo = $_POST['ReservationNo'];
+//        $RoomNo = $_POST['RoomNoUp'];
+//        $OldRoomNo = $_POST['ReservationNoUp'];
+
+        $sql = "SELECT r.Price, res.ReservationNo FROM Room r, Reservation_Makes res WHERE r.RoomNo = res.RoomNo";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindValue(':ReservationNo', $ReservationNo);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
+        if ($result && $statement->rowCount() > 0) {
+            echo "<table><tr><th class='border-class'>Price</th>
+        <th class='border-class'>ReservationNo</th></tr>";
+// output data of each row
+            foreach($result as $row) {
+                echo "<tr><td class='borderclass'>".$row["Price"]."</td>
+<td class='borderclass'>".$row["ReservationNo"]."</td></tr>";}
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+
+//        $success = "User successfully deleted";
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 
@@ -189,6 +223,7 @@ if (isset($_POST['create'])) {
             <input type="submit" name = "delete" value="Delete Reservation">
         </p>
 
+        <p><input type="submit" name = "join" value="Join Room Price and ReservationNo"></p>
 
     </form>
 
