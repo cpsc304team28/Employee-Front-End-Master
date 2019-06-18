@@ -5,7 +5,7 @@
 // then send INSERT SQL statement with the users inputted values
 
 if (isset($_POST['create'])) {
-
+ 
     // config.php holds the server information
     // change config file to local host (the one you made in Hazra's tutorial)
     // common.php maintains special characters used in html that would otherwise
