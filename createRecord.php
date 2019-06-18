@@ -128,6 +128,40 @@ if (isset($_POST['create'])) {
     } catch (PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
+} else if (isset($_POST['select'])){
+    try {
+        require "config.php";
+        require "common.php";
+
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $Completed = $_POST['CompletedSel'];
+
+        $sql = "SELECT *
+    FROM Maintenance_Record WHERE Completed = '$Completed'";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':CaseNo', $CaseNo, PDO::PARAM_STR);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
+        if ($result && $statement->rowCount() > 0) {
+            echo "<table><tr><th class='border-class'>CaseNo</th>
+        <th class='border-class'>EmployeeID</th>
+        <th class='border-class'>MDate</th>
+        <th class='border-class'>Completed</th>";
+// output data of each row
+            foreach($result as $row) {
+                echo "<tr><td class='borderclass'>".$row["CaseNo"]."</td><td class='borderclass'>".$row["EmployeeID"]."</td><td class='borderclass'>".$row["MDate"]."</td>
+<td class='borderclass'>".$row["Completed"]."</td></tr>";}
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 
@@ -164,20 +198,20 @@ if (isset($_POST['create'])) {
         </p>
 
         <p>
-           <label for="CaseNoUp">CaseNo to Update</label>
-    	<input type="text" name="CaseNoUp" id="CaseNoUp">
+<!--           <label for="CaseNoUp">CaseNo to Update</label>-->
+<!--    	<input type="text" name="CaseNoUp" id="CaseNoUp">-->
+<!---->
+<!--    	<label for="EmployeeIDUp">EmployeeID to Update</label>-->
+<!--    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">-->
+<!---->
+<!--    	<label for="MDateUp">MDate to Update</label>-->
+<!--    	<input type="text" name="MDateUp" id="MDateUp">-->
 
-    	<label for="EmployeeIDUp">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
-
-    	<label for="MDateUp">MDate to Update</label>
-    	<input type="text" name="MDateUp" id="MDateUp">
-
-    	<label for="CompletedUp">Completed to Update</label>
-    	<input type="text" name="CompletedUp" id="CompletedUp">
+    	<label for="CompletedSel">Completed: Type Y or N</label>
+    	<input type="text" name="CompletedSel" id="CompletedSel">
 
 
-            <input type="submit" name = "update" value="Update Maintenance Record">
+            <input type="submit" name = "select" value="Select Completed or Not Completed Maintenance Record">
         </p>
         
         <p>
