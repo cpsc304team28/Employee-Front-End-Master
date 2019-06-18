@@ -88,6 +88,33 @@ if (isset($_POST['create'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
+}else if (isset($_POST['max'])){
+    try {
+        require "config.php";
+        require "common.php";
+
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $sql = "SELECT MAX(Price) FROM Room";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindParam(':RoomNo', $RoomNo, PDO::PARAM_STR);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
+        if ($result && $statement->rowCount() > 0) {
+            echo "<table><tr><th class='border-class'>Price</th></tr>";
+//// output data of each row
+            foreach($result as $row) {
+                echo "<tr><td class='borderclass'>".$row["MAX(Price)"]."</td></tr>";}
+            echo "</table>";
+        } else {
+            echo "0 results";
+        }
+
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 
@@ -109,17 +136,17 @@ if (isset($_POST['create'])) {
 
         <p>
 
-        <label for="RoomNo">RoomNo</label>
-        <input type="text" name="RoomNo" id="RoomNo">
+            <label for="RoomNo">RoomNo</label>
+            <input type="text" name="RoomNo" id="RoomNo">
 
-        <label for="Price">Price</label>
-        <input type="text" name="Price" id="Price">
+            <label for="Price">Price</label>
+            <input type="text" name="Price" id="Price">
 
-        <label for="NoOfBeds">NoOfBeds</label>
-        <input type="text" name="NoOfBeds" id="NoOfBeds">
+            <label for="NoOfBeds">NoOfBeds</label>
+            <input type="text" name="NoOfBeds" id="NoOfBeds">
 
-        <label for="Kitchen">Kitchen</label>
-        <input type="text" name="Kitchen" id="Kitchen">
+            <label for="Kitchen">Kitchen</label>
+            <input type="text" name="Kitchen" id="Kitchen">
 
             <label for="Patio">Patio</label>
             <input type="text" name="Patio" id="Patio">
@@ -166,6 +193,8 @@ if (isset($_POST['create'])) {
             <input type="text" name="RoomNoDel" id="RoomNoDel">
             <input type="submit" name = "delete" value="Delete Room">
         </p>
+
+        <p><input type="submit" name = "max" value="Max Room Price"></p>
 
 
     </form>
