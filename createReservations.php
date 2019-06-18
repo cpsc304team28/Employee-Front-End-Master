@@ -104,6 +104,27 @@ if (isset($_POST['create'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
+} else if (isset($_POST['update'])) {
+    try {
+
+        require "config.php";
+        require "common.php";
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $ReservationNo = $_POST['ReservationNoUp'];
+        $RoomNo = $_POST['RoomNoUp'];
+        $OldRoomNo = $_POST['ReservationNoUp'];
+
+        $sql = "UPDATE Reservation_Makes SET RoomNo = $RoomNo WHERE ReservationNo = $OldRoomNo";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindValue(':ReservationNo_del', $ReservationNo);
+        $statement->execute();
+
+        $success = "User successfully deleted";
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 
@@ -143,21 +164,21 @@ if (isset($_POST['create'])) {
             <input type="submit" name="create" value="Create Reservation"></p>
 
         <p>
-
-            <label for="ReservationNoUp">ReservationNo to Update</label>
+<!---->
+            <label for="ReservationNoUp">Reservation to Update</label>
             <input type="text" name="ReservationNoUp" id="ReservationNoUp">
 
             <label for="RoomNoUp">RoomNo to Update</label>
             <input type="text" name="RoomNoUp" id="RoomNoUp">
-
-            <label for="CustomerIDUp">CustomerIDUp to Update</label>
-            <input type="text" name="CustomerIDUp" id="CustomerIDUp">
-
-            <label for="CheckInDateUp">CheckInDate to Update</label>
-            <input type="text" name="CheckInDateUp" id="CheckInDateUp">
-
-            <label for="CheckOutDateUp">CheckOutDate to Update</label>
-            <input type="text" name="CheckOutDateUp" id="CheckOutDateUp">
+<!---->
+<!--            <label for="CustomerIDUp">CustomerIDUp to Update</label>-->
+<!--            <input type="text" name="CustomerIDUp" id="CustomerIDUp">-->
+<!---->
+<!--            <label for="CheckInDateUp">CheckInDate to Update</label>-->
+<!--            <input type="text" name="CheckInDateUp" id="CheckInDateUp">-->
+<!---->
+<!--            <label for="CheckOutDateUp">CheckOutDate to Update</label>-->
+<!--            <input type="text" name="CheckOutDateUp" id="CheckOutDateUp">-->
 
             <input type="submit" name = "update" value="Update Reservation">
         </p>
