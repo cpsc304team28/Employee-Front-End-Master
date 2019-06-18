@@ -93,6 +93,25 @@ if (isset($_POST['create'])) {
   } catch(PDOException $error) {
     echo $sql . "<br>" . $error->getMessage();
   }
+} else if (isset($_POST['delete'])) {
+    try {
+
+        require "config.php";
+        require "common.php";
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $CustomerID = $_POST['CustomerID_del'];
+
+        $sql = "DELETE FROM Customer WHERE CustomerID = $CustomerID";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindValue(':CustomerID_del', $CustomerID);
+        $statement->execute();
+
+        $success = "User successfully deleted";
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 

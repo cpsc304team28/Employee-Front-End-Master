@@ -27,7 +27,7 @@ if (isset($_POST['create'])) {
             "RoomNo" => $_POST['RoomNo'],
             "CustomerID"=>$_POST['CustomerID'],
             "CheckInDate"=>$_POST['CheckInDate'],
-        "CheckOutDate" => $_POST['CheckOutDate'],
+            "CheckOutDate" => $_POST['CheckOutDate'],
 //        "FacilityName" => $_POST['FacilityName'],
 //        "Name" => $_POST['Name'],
 //        "Position" => $_POST['Position']
@@ -85,6 +85,25 @@ if (isset($_POST['create'])) {
     } catch(PDOException $error) {
         echo $sql . "<br>" . $error->getMessage();
     }
+} else if (isset($_POST['delete'])) {
+    try {
+
+        require "config.php";
+        require "common.php";
+        $connection = new PDO($dsn, $username, $password, $options);
+
+        $ReservationNo = $_POST['ReservationNo_del'];
+
+        $sql = "DELETE FROM Reservation_Makes WHERE ReservationNo = $ReservationNo";
+
+        $statement = $connection->prepare($sql);
+        $statement->bindValue(':ReservationNo_del', $ReservationNo);
+        $statement->execute();
+
+        $success = "User successfully deleted";
+    } catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
 }
 ?>
 
@@ -106,17 +125,17 @@ if (isset($_POST['create'])) {
 
         <p>
 
-        <label for="ReservationNo">Reservation Number</label>
-        <input type="text" name="ReservationNo" id="ReservationNo">
+            <label for="ReservationNo">Reservation Number</label>
+            <input type="text" name="ReservationNo" id="ReservationNo">
 
-        <label for="RoomNo">RoomNo</label>
-        <input type="text" name="RoomNo" id="RoomNo">
+            <label for="RoomNo">RoomNo</label>
+            <input type="text" name="RoomNo" id="RoomNo">
 
-        <label for="CustomerID">CustomerID</label>
-        <input type="text" name="CustomerID" id="CustomerID">
+            <label for="CustomerID">CustomerID</label>
+            <input type="text" name="CustomerID" id="CustomerID">
 
-        <label for="CheckInDate">Check-In Date</label>
-        <input type="text" name="CheckInDate" id="CheckInDate">
+            <label for="CheckInDate">Check-In Date</label>
+            <input type="text" name="CheckInDate" id="CheckInDate">
 
             <label for="CheckOutDate">Check-Out Date</label>
             <input type="text" name="CheckOutDate" id="CheckOutDate">
@@ -144,8 +163,8 @@ if (isset($_POST['create'])) {
         </p>
 
         <p>
-            <label for="ReservationNoDel">Reservation to Delete</label>
-            <input type="text" name="ReservationNoDel" id="ReservationNoDel">
+            <label for="ReservationNo_del">Reservation to Delete</label>
+            <input type="text" name="ReservationNo_del" id="ReservationNo_del">
             <input type="submit" name = "delete" value="Delete Reservation">
         </p>
 
