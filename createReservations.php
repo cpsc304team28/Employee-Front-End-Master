@@ -5,7 +5,7 @@
 // then send INSERT SQL statement with the users inputted values
 
 if (isset($_POST['create'])) {
- 
+
     // config.php holds the server information
     // change config file to local host (the one you made in Hazra's tutorial)
     // common.php maintains special characters used in html that would otherwise
@@ -234,7 +234,7 @@ if (isset($_POST['create'])) {
             <label for="ReservationNoUp">Reservation to Update</label>
             <input type="text" name="ReservationNoUp" id="ReservationNoUp">
 
-            <label for="RoomNoUp">RoomNo to Update</label>
+            <label for="RoomNoUp">New RoomNo</label>
             <input type="text" name="RoomNoUp" id="RoomNoUp">
 <!---->
 <!--            <label for="CustomerIDUp">CustomerIDUp to Update</label>-->
