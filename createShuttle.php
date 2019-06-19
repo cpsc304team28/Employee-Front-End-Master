@@ -124,26 +124,26 @@ if (isset($_POST['create'])) {
 
     	<input type="submit" name="create" value="Create Shuttle Schedule Record">
         </p>
-        <p>
-
-    	<label for="DestinationUp">VehicleType to Update</label>
-    	<input type="text" name="DestinationUp" id="DestinationUp">
-
-    	<label for="DepartureTimeUp">DepartureTime to Update</label>
-    	<input type="text" name="DepartureTimeUp" id="DepartureTimeUp">
-
-             <label for="ArrivalTimeUp">ArrivalTime to Update</label>
-             <input type="text" name="ArrivalTimeUp" id="ArrivalTimeUp">
-
-
-            <input type="submit" name = "update" value="Update Shuttle Schedule Record">
-        </p>
-
-        <p>
-            <label for="DestinationDel">Shuttle Schedule to Delete</label>
-    	<input type="text" name="DestinationDel" id="DestinationDel">
-            <input type="submit" name = "delete" value="Delete Shuttle Schedule Record">
-        </p>
+<!--        <p>-->
+<!---->
+<!--    	<label for="DestinationUp">VehicleType to Update</label>-->
+<!--    	<input type="text" name="DestinationUp" id="DestinationUp">-->
+<!---->
+<!--    	<label for="DepartureTimeUp">DepartureTime to Update</label>-->
+<!--    	<input type="text" name="DepartureTimeUp" id="DepartureTimeUp">-->
+<!---->
+<!--             <label for="ArrivalTimeUp">ArrivalTime to Update</label>-->
+<!--             <input type="text" name="ArrivalTimeUp" id="ArrivalTimeUp">-->
+<!---->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Shuttle Schedule Record">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="DestinationDel">Shuttle Schedule to Delete</label>-->
+<!--    	<input type="text" name="DestinationDel" id="DestinationDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Shuttle Schedule Record">-->
+<!--        </p>-->
 
 
     </form>

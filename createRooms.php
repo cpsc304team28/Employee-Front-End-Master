@@ -78,7 +78,6 @@ if (isset($_POST['create'])) {
 <td class='borderclass'>".$row["Kitchen"]."</td>
 <td class='borderclass'>".$row["Patio"]."</td>
 <td class='borderclass'>".$row["Handicap"]."</td>
-<td class='borderclass'>".$row["NoOfAdults"]."</td>
 <td class='borderclass'>".$row["PrivatePool"]."</td></tr>";}
             echo "</table>";
         } else {
@@ -133,6 +132,7 @@ if (isset($_POST['create'])) {
 
         <p>
             <input type="submit" name = "view" value="View Rooms"></p>
+        <p><input type="submit" name = "max" value="Max Room Price"></p>
 
         <p>
 
@@ -160,41 +160,40 @@ if (isset($_POST['create'])) {
 
             <input type="submit" name="create" value="Create Room"></p>
 
-        <p>
+        <!--        <p>-->
+        <!---->
+        <!--            <label for="RoomNoUp">RoomNo to Update</label>-->
+        <!--            <input type="text" name="RoomNoUp" id="RoomNoUp">-->
+        <!---->
+        <!--            <label for="PriceUp">Price to Update</label>-->
+        <!--            <input type="text" name="PriceUp" id="PriceUp">-->
+        <!---->
+        <!--            <label for="NoOfBedsUp">NoOfBeds to Update</label>-->
+        <!--            <input type="text" name="NoOfBedsUp" id="NoOfBedsUp">-->
+        <!---->
+        <!--            <label for="KitchenUp">Kitchen to Update</label>-->
+        <!--            <input type="text" name="KitchenUp" id="KitchenUp">-->
+        <!---->
+        <!--            <label for="PatioUp">Patio to Update</label>-->
+        <!--            <input type="text" name="PatioUp" id="PatioUp">-->
+        <!---->
+        <!--            <label for="HandicapUp">Handicap to Update</label>-->
+        <!--            <input type="text" name="HandicapUp" id="HandicapUp">-->
+        <!---->
+        <!--            <label for="PrivatePoolUp">PrivatePool to Update</label>-->
+        <!--            <input type="text" name="PrivatePoolUp" id="PrivatePoolUp">-->
+        <!---->
+        <!---->
+        <!---->
+        <!--            <input type="submit" name = "update" value="Update Room">-->
+        <!--        </p>-->
 
-            <label for="RoomNoUp">RoomNo to Update</label>
-            <input type="text" name="RoomNoUp" id="RoomNoUp">
+        <!--        <p>-->
+        <!--            <label for="RoomNoDel">Room to Delete</label>-->
+        <!--            <input type="text" name="RoomNoDel" id="RoomNoDel">-->
+        <!--            <input type="submit" name = "delete" value="Delete Room">-->
+        <!--        </p>-->
 
-            <label for="PriceUp">Price to Update</label>
-            <input type="text" name="PriceUp" id="PriceUp">
-
-            <label for="NoOfBedsUp">NoOfBeds to Update</label>
-            <input type="text" name="NoOfBedsUp" id="NoOfBedsUp">
-
-            <label for="KitchenUp">Kitchen to Update</label>
-            <input type="text" name="KitchenUp" id="KitchenUp">
-
-            <label for="PatioUp">Patio to Update</label>
-            <input type="text" name="PatioUp" id="PatioUp">
-
-            <label for="HandicapUp">Handicap to Update</label>
-            <input type="text" name="HandicapUp" id="HandicapUp">
-
-            <label for="PrivatePoolUp">PrivatePool to Update</label>
-            <input type="text" name="PrivatePoolUp" id="PrivatePoolUp">
-
-
-
-            <input type="submit" name = "update" value="Update Room">
-        </p>
-
-        <p>
-            <label for="RoomNoDel">Room to Delete</label>
-            <input type="text" name="RoomNoDel" id="RoomNoDel">
-            <input type="submit" name = "delete" value="Delete Room">
-        </p>
-
-        <p><input type="submit" name = "max" value="Max Room Price"></p>
 
 
     </form>

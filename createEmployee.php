@@ -115,27 +115,27 @@ if (isset($_POST['create'])) {
 
             <input type="submit" name="create" value="Create Employee"></p>
 
-        <p>
-
-            <label for="EmployeeIDUp">EmployeeID to Update</label>
-            <input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
-            <label for="FacilityNameUp">Facility Name to Update</label>
-            <input type="text" name="FacilityNameUp" id="FacilityNameUp">
-
-            <label for="NameUp">Name to Update</label>
-            <input type="text" name="NameUp" id="NameUp">
-
-            <label for="PositionUp">Position to Update</label>
-            <input type="text" name="PositionUp" id="PositionUp">
-
-            <input type="submit" name = "update" value="Update Employee">
-        </p>
-
-        <p>
-            <label for="EmployeeIDDel">EmployeeID to Delete</label>
-            <input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
-            <input type="submit" name = "delete" value="Delete Employee">
-        </p>
+<!--        <p>-->
+<!---->
+<!--            <label for="EmployeeIDUp">EmployeeID to Update</label>-->
+<!--            <input type="text" name="EmployeeIDUp" id="EmployeeIDUp">-->
+<!--            <label for="FacilityNameUp">Facility Name to Update</label>-->
+<!--            <input type="text" name="FacilityNameUp" id="FacilityNameUp">-->
+<!---->
+<!--            <label for="NameUp">Name to Update</label>-->
+<!--            <input type="text" name="NameUp" id="NameUp">-->
+<!---->
+<!--            <label for="PositionUp">Position to Update</label>-->
+<!--            <input type="text" name="PositionUp" id="PositionUp">-->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Employee">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="EmployeeIDDel">EmployeeID to Delete</label>-->
+<!--            <input type="text" name="EmployeeIDDel" id="EmployeeIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Employee">-->
+<!--        </p>-->
 
 
     </form>

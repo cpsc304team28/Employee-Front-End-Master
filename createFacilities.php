@@ -114,31 +114,31 @@ if (isset($_POST['create'])) {
 
             <input type="submit" name="create" value="Create Facility"></p>
 
-        <p>
-
-            <label for="FacilityNameUp">FacilityName to Update</label>
-            <input type="text" name="FacilityNameUp" id="FacilityNameUp">
-
-            <label for="CapacityUp">Capacity to Update</label>
-            <input type="text" name="CapacityUp" id="CapacityUp">
-
-            <label for="OpeningHourUp">OpeningHour to Update</label>
-            <input type="text" name="OpeningHourUp" id="OpeningHourUp">
-
-            <label for="ClosingHourUp">ClosingHour to Update</label>
-            <input type="text" name="ClosingHourUp" id="ClosingHourUp">
-
-
-
-
-            <input type="submit" name = "update" value="Update Facility">
-        </p>
-
-        <p>
-            <label for="FacilityNameDel">Facility to Delete</label>
-            <input type="text" name="FacilityNameDel" id="FacilityNameDel">
-            <input type="submit" name = "delete" value="Delete Facility">
-        </p>
+<!--        <p>-->
+<!---->
+<!--            <label for="FacilityNameUp">FacilityName to Update</label>-->
+<!--            <input type="text" name="FacilityNameUp" id="FacilityNameUp">-->
+<!---->
+<!--            <label for="CapacityUp">Capacity to Update</label>-->
+<!--            <input type="text" name="CapacityUp" id="CapacityUp">-->
+<!---->
+<!--            <label for="OpeningHourUp">OpeningHour to Update</label>-->
+<!--            <input type="text" name="OpeningHourUp" id="OpeningHourUp">-->
+<!---->
+<!--            <label for="ClosingHourUp">ClosingHour to Update</label>-->
+<!--            <input type="text" name="ClosingHourUp" id="ClosingHourUp">-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Facility">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="FacilityNameDel">Facility to Delete</label>-->
+<!--            <input type="text" name="FacilityNameDel" id="FacilityNameDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Facility">-->
+<!--        </p>-->
 
 
     </form>

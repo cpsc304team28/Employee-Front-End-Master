@@ -121,22 +121,22 @@ if (isset($_POST['create'])) {
         
 <!--        <p>-->
 
-        <p>
-           <label for="EmployeeIDUp">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
-
-    	<label for="StationNoUp">StationNo to Update</label>
-    	<input type="text" name="StationNoUp" id="StationNoUp">
-
-            <input type="submit" name = "update" value="Update Lifeguard Assignment">
-        </p>
-        
-        <p>
-            <label for="EmployeeIDDel">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
-            <input type="submit" name = "delete" value="Delete Lifeguard Assignment">
-        </p>
-        
+<!--        <p>-->
+<!--           <label for="EmployeeIDUp">EmployeeID to Update</label>-->
+<!--    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">-->
+<!---->
+<!--    	<label for="StationNoUp">StationNo to Update</label>-->
+<!--    	<input type="text" name="StationNoUp" id="StationNoUp">-->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Lifeguard Assignment">-->
+<!--        </p>-->
+<!--        -->
+<!--        <p>-->
+<!--            <label for="EmployeeIDDel">EmployeeID to Delete</label>-->
+<!--    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Lifeguard Assignment">-->
+<!--        </p>-->
+<!--        -->
 
     </form>
 

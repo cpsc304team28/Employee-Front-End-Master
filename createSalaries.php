@@ -119,6 +119,8 @@ if (isset($_POST['create'])) {
         <p>
             <input type="submit" name = "view" value="View Salaries"></p>
 
+        <p> <input type="submit" name = "project" value="Project Wages"></p>
+
         <p>
             <label for="Position">Position</label>
             <input type="text" name="Position" id="Position">
@@ -129,21 +131,21 @@ if (isset($_POST['create'])) {
             <input type="submit" name="create" value="Create Wage">
 
         </p>
-        <p>
-            <label for="PositionUp">Position to Update</label>
-            <input type="text" name="PositionUp" id="PositionUp">
-            <label for="WageUp">Salary to Update</label>
-            <input type="text" name="SalariesUp" id="WageUp">
+<!--        <p>-->
+<!--            <label for="PositionUp">Position to Update</label>-->
+<!--            <input type="text" name="PositionUp" id="PositionUp">-->
+<!--            <label for="WageUp">Salary to Update</label>-->
+<!--            <input type="text" name="SalariesUp" id="WageUp">-->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Wage">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="PositionDel">Position to Delete</label>-->
+<!--            <input type="text" name="PositionDel" id="PositionDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Salary">-->
+<!--        </p>-->
 
-            <input type="submit" name = "update" value="Update Wage">
-        </p>
-
-        <p>
-            <label for="PositionDel">Position to Delete</label>
-            <input type="text" name="PositionDel" id="PositionDel">
-            <input type="submit" name = "delete" value="Delete Salary">
-        </p>
-        <p> <input type="submit" name = "project" value="Project Wages"></p>
 
 
     </form>

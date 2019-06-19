@@ -113,32 +113,32 @@ if (isset($_POST['create'])) {
 
             <input type="submit" name="create" value="Create Equipment"></p>
 
-        <p>
-
-            <label for="EquipmentIDUp">EquipmentID to Update</label>
-            <input type="text" name="EquipmentIDUp" id="EquipmentIDUp">
-
-            <label for="FacilityNameUp">FacilityName to Update</label>
-            <input type="text" name="FacilityNameUp" id="FacilityNameUp">
-
-
-            <label for="CurrentlyRentedUp">CurrentlyRented to Update</label>
-            <input type="text" name="CurrentlyRentedUp" id="CurrentlyRentedUp">
-
-            <label for="TypeUp">Type to Update</label>
-            <input type="text" name="TypeUp" id="TypeUp">
-
-
-
-
-            <input type="submit" name = "update" value="Update Equipment">
-        </p>
-
-        <p>
-            <label for="EquipmentIDDel">Equipment to Delete</label>
-            <input type="text" name="EquipmentIDDel" id="EquipmentIDDel">
-            <input type="submit" name = "delete" value="Delete Equipment">
-        </p>
+<!--        <p>-->
+<!---->
+<!--            <label for="EquipmentIDUp">EquipmentID to Update</label>-->
+<!--            <input type="text" name="EquipmentIDUp" id="EquipmentIDUp">-->
+<!---->
+<!--            <label for="FacilityNameUp">FacilityName to Update</label>-->
+<!--            <input type="text" name="FacilityNameUp" id="FacilityNameUp">-->
+<!---->
+<!---->
+<!--            <label for="CurrentlyRentedUp">CurrentlyRented to Update</label>-->
+<!--            <input type="text" name="CurrentlyRentedUp" id="CurrentlyRentedUp">-->
+<!---->
+<!--            <label for="TypeUp">Type to Update</label>-->
+<!--            <input type="text" name="TypeUp" id="TypeUp">-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Equipment">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="EquipmentIDDel">Equipment to Delete</label>-->
+<!--            <input type="text" name="EquipmentIDDel" id="EquipmentIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Equipment">-->
+<!--        </p>-->
 
 
     </form>

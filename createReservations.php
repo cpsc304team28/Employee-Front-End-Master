@@ -209,6 +209,9 @@ if (isset($_POST['create'])) {
 
         <p>
             <input type="submit" name = "view" value="View Reservations"></p>
+        <p><input type="submit" name = "join" value="Join Room Price and ReservationNo"></p>
+        <p><input type="submit" name = "nested" value="Customers spending more than 200"></p>
+
 
         <p>
 
@@ -255,8 +258,6 @@ if (isset($_POST['create'])) {
             <input type="submit" name = "delete" value="Delete Reservation">
         </p>
 
-        <p><input type="submit" name = "join" value="Join Room Price and ReservationNo"></p>
-        <p><input type="submit" name = "nested" value="Customers spending more than 200"></p>
 
     </form>
 

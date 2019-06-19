@@ -114,31 +114,31 @@ if (isset($_POST['create'])) {
 
 
             <input type="submit" name="create" value="Create Emergency Contact"></p>
-
-        <p>
-
-            <label for="EmergencyNameUp">Emergency Name to Update</label>
-            <input type="text" name="EmergencyNameUp" id="EmergencyNameUp">
-
-            <label for="CustomerIDUp">CustomerID to Update</label>
-            <input type="text" name="CustomerIDUp" id="CustomerIDUp">
-
-            <label for="PhoneNoUp">PhoneNo to Update</label>
-            <input type="text" name="PhoneNoUp" id="PhoneNoUp">
-
-            <label for="RelationToCustomerUp">Relation To Customer to Update</label>
-            <input type="text" name="RelationToCustomerUp" id="RelationToCustomerUp">
-
-
-
-            <input type="submit" name = "update" value="Update Emergency Contact">
-        </p>
-
-        <p>
-            <label for="CustomerIDDel">Emergency Contact from CustomerID to Delete</label>
-            <input type="text" name="CustomerIDDel" id="CustomerIDDel">
-            <input type="submit" name = "delete" value="Delete Emergency Contact">
-        </p>
+<!---->
+<!--        <p>-->
+<!---->
+<!--            <label for="EmergencyNameUp">Emergency Name to Update</label>-->
+<!--            <input type="text" name="EmergencyNameUp" id="EmergencyNameUp">-->
+<!---->
+<!--            <label for="CustomerIDUp">CustomerID to Update</label>-->
+<!--            <input type="text" name="CustomerIDUp" id="CustomerIDUp">-->
+<!---->
+<!--            <label for="PhoneNoUp">PhoneNo to Update</label>-->
+<!--            <input type="text" name="PhoneNoUp" id="PhoneNoUp">-->
+<!---->
+<!--            <label for="RelationToCustomerUp">Relation To Customer to Update</label>-->
+<!--            <input type="text" name="RelationToCustomerUp" id="RelationToCustomerUp">-->
+<!---->
+<!---->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Emergency Contact">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="CustomerIDDel">Emergency Contact from CustomerID to Delete</label>-->
+<!--            <input type="text" name="CustomerIDDel" id="CustomerIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Emergency Contact">-->
+<!--        </p>-->
 
 
     </form>

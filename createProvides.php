@@ -123,24 +123,24 @@ if (isset($_POST['create'])) {
     	<input type="submit" name="create" value="Create Provides Record">
         </p>
 
-
-        <p>
-    	<label for="EmployeeIDUp">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">
-
-    	<label for="TransportationIDUp">TransportationID to Update</label>
-    	<input type="text" name="TransportationIDUp" id="TransportationIDUp">
-
-
-            <input type="submit" name = "update" value="Update Provides Record">
-        </p>
-        
-        <p>
-            <label for="EmployeeIDDel">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
-            <input type="submit" name = "delete" value="Delete Provides Record">
-        </p>
-        
+<!---->
+<!--        <p>-->
+<!--    	<label for="EmployeeIDUp">EmployeeID to Update</label>-->
+<!--    	<input type="text" name="EmployeeIDUp" id="EmployeeIDUp">-->
+<!---->
+<!--    	<label for="TransportationIDUp">TransportationID to Update</label>-->
+<!--    	<input type="text" name="TransportationIDUp" id="TransportationIDUp">-->
+<!---->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Provides Record">-->
+<!--        </p>-->
+<!--        -->
+<!--        <p>-->
+<!--            <label for="EmployeeIDDel">EmployeeID to Delete</label>-->
+<!--    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Provides Record">-->
+<!--        </p>-->
+<!--        -->
 
     </form>
 

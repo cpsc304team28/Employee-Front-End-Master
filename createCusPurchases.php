@@ -137,21 +137,21 @@ WHERE NOT EXISTS
             <input type="submit" name="create" value="Create Equipment Rental">
 
         </p>
-        <p>
-            <label for="CustomerIDUp">CustomerID to Update</label>
-            <input type="text" name="CustomerIDUp" id="CustomerIDUp">
-
-            <label for="EquipmentIDUp">EquipmentID to Update</label>
-            <input type="text" name="EquipmentIDUp" id="EquipmentIDUp">
-
-            <input type="submit" name = "update" value="Update Equipment Rental">
-        </p>
-
-        <p>
-            <label for="CustomerIDDel">CustomerID to Delete</label>
-            <input type="text" name="CustomerIDDel" id="CustomerIDDel">
-            <input type="submit" name = "delete" value="Delete Equipment Rental">
-        </p>
+<!--        <p>-->
+<!--            <label for="CustomerIDUp">CustomerID to Update</label>-->
+<!--            <input type="text" name="CustomerIDUp" id="CustomerIDUp">-->
+<!---->
+<!--            <label for="EquipmentIDUp">EquipmentID to Update</label>-->
+<!--            <input type="text" name="EquipmentIDUp" id="EquipmentIDUp">-->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Equipment Rental">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="CustomerIDDel">CustomerID to Delete</label>-->
+<!--            <input type="text" name="CustomerIDDel" id="CustomerIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Equipment Rental">-->
+<!--        </p>-->
 
 
     </form>

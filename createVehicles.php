@@ -140,24 +140,24 @@ if (isset($_POST['create'])) {
     	<input type="submit" name="create" value="Create Vehicle Record">
         
         </p>
-        <p>
-
-    	<label for="VehicleTypeUp">VehicleType to Update</label>
-    	<input type="text" name="VehicleTypeUp" id="VehicleTypeUp">
-
-    	<label for="CapacityUp">Destination to Update</label>
-    	<input type="text" name="CapacityUp" id="CapacityUp">
-
-
-            <input type="submit" name = "update" value="Update Vehicle Record">
-        </p>
-        
-        <p>
-            <label for="VehicleTypeDel">VehicleType to Delete</label>
-    	<input type="text" name="VehicleTypeDel" id="VehicleTypeDel">
-            <input type="submit" name = "delete" value="Delete VehicleType Record">
-        </p>
-        
+<!--        <p>-->
+<!---->
+<!--    	<label for="VehicleTypeUp">VehicleType to Update</label>-->
+<!--    	<input type="text" name="VehicleTypeUp" id="VehicleTypeUp">-->
+<!---->
+<!--    	<label for="CapacityUp">Destination to Update</label>-->
+<!--    	<input type="text" name="CapacityUp" id="CapacityUp">-->
+<!---->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Vehicle Record">-->
+<!--        </p>-->
+<!--        -->
+<!--        <p>-->
+<!--            <label for="VehicleTypeDel">VehicleType to Delete</label>-->
+<!--    	<input type="text" name="VehicleTypeDel" id="VehicleTypeDel">-->
+<!--            <input type="submit" name = "delete" value="Delete VehicleType Record">-->
+<!--        </p>-->
+<!--        -->
 
     </form>
 

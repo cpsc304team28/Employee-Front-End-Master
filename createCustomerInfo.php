@@ -140,42 +140,42 @@ if (isset($_POST['create'])) {
 
             <input type="submit" name="create" value="Create Customer"></p>
 
-        <p>
-
-            <label for="CustomerIDUp">CustomerID to Update</label>
-            <input type="text" name="CustomerIDUp" id="CustomerIDUp">
-
-            <label for="NameUp">Name to Update</label>
-            <input type="text" name="NameUp" id="NameUp">
-
-            <label for="PhoneNoUp">Phone Number to Update</label>
-            <input type="text" name="PhoneNoUp" id="PhoneNoUp">
-
-            <label for="EmailUp">Email to Update</label>
-            <input type="text" name="EmailUp" id="EmailUp">
-
-            <label for="AddressUp">Address to Update</label>
-            <input type="text" name="AddressUp" id="AddressUp">
-
-            <label for="CreditCardUp">Credit Card Number to Update</label>
-            <input type="text" name="CreditCardUp" id="CreditCardUp">
-
-            <label for="NoOfAdultsUp">NoOfAdults to Update</label>
-            <input type="text" name="NoOfAdultsUp" id="NoOfAdultsUp">
-
-            <label for="NoOfChildrenUp">NoOfChildren to Update</label>
-            <input type="text" name="NoOfChildrenUp" id="NoOfChildrenUp">
-
-
-
-            <input type="submit" name = "update" value="Update Customer">
-        </p>
-
-        <p>
-            <label for="CustomerIDDel">CustomerID to Delete</label>
-            <input type="text" name="CustomerIDDel" id="CustomerIDDel">
-            <input type="submit" name = "delete" value="Delete Customer">
-        </p>
+<!--        <p>-->
+<!---->
+<!--            <label for="CustomerIDUp">CustomerID to Update</label>-->
+<!--            <input type="text" name="CustomerIDUp" id="CustomerIDUp">-->
+<!---->
+<!--            <label for="NameUp">Name to Update</label>-->
+<!--            <input type="text" name="NameUp" id="NameUp">-->
+<!---->
+<!--            <label for="PhoneNoUp">Phone Number to Update</label>-->
+<!--            <input type="text" name="PhoneNoUp" id="PhoneNoUp">-->
+<!---->
+<!--            <label for="EmailUp">Email to Update</label>-->
+<!--            <input type="text" name="EmailUp" id="EmailUp">-->
+<!---->
+<!--            <label for="AddressUp">Address to Update</label>-->
+<!--            <input type="text" name="AddressUp" id="AddressUp">-->
+<!---->
+<!--            <label for="CreditCardUp">Credit Card Number to Update</label>-->
+<!--            <input type="text" name="CreditCardUp" id="CreditCardUp">-->
+<!---->
+<!--            <label for="NoOfAdultsUp">NoOfAdults to Update</label>-->
+<!--            <input type="text" name="NoOfAdultsUp" id="NoOfAdultsUp">-->
+<!---->
+<!--            <label for="NoOfChildrenUp">NoOfChildren to Update</label>-->
+<!--            <input type="text" name="NoOfChildrenUp" id="NoOfChildrenUp">-->
+<!---->
+<!---->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Customer">-->
+<!--        </p>-->
+<!---->
+<!--        <p>-->
+<!--            <label for="CustomerIDDel">CustomerID to Delete</label>-->
+<!--            <input type="text" name="CustomerIDDel" id="CustomerIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Customer">-->
+<!--        </p>-->
 
 
     </form>

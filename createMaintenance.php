@@ -120,21 +120,21 @@ if (isset($_POST['create'])) {
     	<input type="submit" name="create" value="Create HouseKeeping Assignment">
         
         </p>
-        <p>
-           <label for="EmployeeIDUp">EmployeeID to Update</label>
-    	<input type="text" name="EmployeeIDUp" id="EmployeeID">
-
-    	<label for="AssignedFloorUp">Assigned Floor to Update</label>
-    	<input type="text" name="AssignedFloorUp" id="AssignedFloorUp">
-
-            <input type="submit" name = "update" value="Update Housekeeping Assignment">
-        </p>
-        
-        <p>
-            <label for="EmployeeIDDel">EmployeeID to Delete</label>
-    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">
-            <input type="submit" name = "delete" value="Delete Housekeeping Assignment">
-        </p>
+<!--        <p>-->
+<!--           <label for="EmployeeIDUp">EmployeeID to Update</label>-->
+<!--    	<input type="text" name="EmployeeIDUp" id="EmployeeID">-->
+<!---->
+<!--    	<label for="AssignedFloorUp">Assigned Floor to Update</label>-->
+<!--    	<input type="text" name="AssignedFloorUp" id="AssignedFloorUp">-->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Housekeeping Assignment">-->
+<!--        </p>-->
+<!--        -->
+<!--        <p>-->
+<!--            <label for="EmployeeIDDel">EmployeeID to Delete</label>-->
+<!--    	<input type="text" name="EmployeeIDDel" id="EmployeeIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Housekeeping Assignment">-->
+<!--        </p>-->
         
 
     </form>

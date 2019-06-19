@@ -106,25 +106,25 @@ if (isset($_POST['create'])) {
     	<input type="submit" name="create" value="Create Ticket Purchase">
         
         </p>
-        <p>
-            <label for="CustomerIDUp">CustomerID to Update</label>
-            <input type="text" name="CustomerIDUp" id="CustomerIDUp">
-
-            <label for="TransportationIDUp">TransportationID to Update</label>
-            <input type="text" name="TransportationIDUp" id="TransportationIDUp">
-
-            <label for="TicketIDUp">TicketID to Update</label>
-            <input type="text" name="TicketIDUp" id="TicketIDUp">
-
-            <input type="submit" name = "update" value="Update Ticket Purchase">
-        </p>
-        
-        <p>
-            <label for="CustomerIDDel">CustomerID Purchase to Delete</label>
-    	<input type="text" name="CustomerIDDel" id="CustomerIDDel">
-            <input type="submit" name = "delete" value="Delete Equipment Rental">
-        </p>
-        
+<!--        <p>-->
+<!--            <label for="CustomerIDUp">CustomerID to Update</label>-->
+<!--            <input type="text" name="CustomerIDUp" id="CustomerIDUp">-->
+<!---->
+<!--            <label for="TransportationIDUp">TransportationID to Update</label>-->
+<!--            <input type="text" name="TransportationIDUp" id="TransportationIDUp">-->
+<!---->
+<!--            <label for="TicketIDUp">TicketID to Update</label>-->
+<!--            <input type="text" name="TicketIDUp" id="TicketIDUp">-->
+<!---->
+<!--            <input type="submit" name = "update" value="Update Ticket Purchase">-->
+<!--        </p>-->
+<!--        -->
+<!--        <p>-->
+<!--            <label for="CustomerIDDel">CustomerID Purchase to Delete</label>-->
+<!--    	<input type="text" name="CustomerIDDel" id="CustomerIDDel">-->
+<!--            <input type="submit" name = "delete" value="Delete Equipment Rental">-->
+<!--        </p>-->
+<!--        -->
 
     </form>
 
